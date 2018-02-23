@@ -1,0 +1,18 @@
+//BASE - basic setup for entire project
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /*make box-sizing inherit on all element*/
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
