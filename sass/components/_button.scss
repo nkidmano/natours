@@ -35,6 +35,15 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
     &::after { /* Virtual BUTTON */
         content: "";
         display: inline-block; /* VIRTUAL button display property depends on REAL button's property*/
