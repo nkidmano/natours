@@ -5,6 +5,7 @@
     }
 
     &__button {
+        text-align: center;
         cursor: pointer;
         position: fixed;
         top: 6rem;
@@ -26,7 +27,7 @@
         width: 6rem;
         border-radius: 50%;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
-        transition: transform .8s cubic-bezier(.86, 0, .07, 1);
+        transition: transform .8s;
     }
 
     &__nav {
@@ -39,7 +40,7 @@
 
         opacity: 0;
         visibility: hidden;
-        transition: all .8s cubic-bezier(.68, -.55, .265, 1.55);
+        transition: all .8s;
     }
 
     &__list {
@@ -84,6 +85,8 @@
         }
     }
 
+    //FUCNTIONALITY
+
     &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
@@ -91,5 +94,58 @@
     &__checkbox:checked ~ &__nav {
         opacity: 1;
         visibility: visible;
+    }
+
+    //ICON
+
+    &__icon {
+        margin-top: 3.5rem;
+        position: relative;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::after { top: -.8rem; }
+        &::before { top: .8rem; }
+
+        &:hover {
+
+        }
+    }
+
+    &__button:hover &__icon::before {
+        top: 1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: -1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }
